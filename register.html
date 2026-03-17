@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | Stackly Biotechnology</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+}
+
+body{
+background:#1d1c2b;
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+color:#fff;
+}
+
+
+html, body {
+overflow-x: hidden;
+width: 100%;
+}
+/* MAIN CONTAINER */
+
+.register-container{
+width:1100px;
+background:#26243a;
+border-radius:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* LEFT SIDE */
+
+.register-left{
+background:linear-gradient(180deg,#00d2ff,#a100ff);
+padding:40px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.register-left img{
+width:100%;
+border-radius:10px;
+}
+
+.register-left h2{
+margin-top:30px;
+font-weight:500;
+}
+
+/* RIGHT SIDE */
+
+.register-right{
+padding:50px;
+}
+
+.register-right h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.register-right p{
+color:#aaa;
+margin-bottom:25px;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:18px;
+}
+
+.form-row{
+display:flex;
+gap:10px;
+}
+
+.form-group input{
+width:100%;
+padding:14px;
+background:#2f2c44;
+border:none;
+border-radius:6px;
+color:#fff;
+outline:none;
+}
+
+.form-group input:focus{
+border:1px solid #00d2ff;
+}
+
+/* PASSWORD ICON */
+
+.password{
+position:relative;
+}
+
+.password i{
+position:absolute;
+right:15px;
+top:15px;
+color:#aaa;
+cursor:pointer;
+}
+
+/* CHECKBOX */
+
+.checkbox{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:14px;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.register-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:6px;
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.register-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* DIVIDER */
+
+.divider{
+text-align:center;
+margin:20px 0;
+color:#aaa;
+}
+
+/* SOCIAL LOGIN */
+
+.social-login{
+display:flex;
+gap:10px;
+}
+
+.social-login button{
+flex:1;
+padding:12px;
+background:#2f2c44;
+border:none;
+border-radius:6px;
+color:#fff;
+cursor:pointer;
+}
+
+.social-login button:hover{
+background:#3a3752;
+}
+
+
+
+.back-home{
+position:absolute;
+top:25px;
+right:80px;
+}
+
+.back-home a{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:10px 18px;
+font-size:15px;
+font-weight:600;
+border-radius:30px;
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+text-decoration:none;
+transition:all 0.3s ease;
+}
+
+/* Hover Effect */
+
+.back-home a:hover{
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Divider */
+
+.divider{
+text-align:center;
+margin:20px 0;
+color:#aaa;
+font-size:14px;
+}
+
+/* Social Buttons Container */
+
+.social-login{
+display:flex;
+gap:10px;
+}
+
+/* Google Button */
+
+.google-btn{
+flex:1;
+padding:12px;
+border-radius:6px;
+border:none;
+background:#ffffff;
+color:#333;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+transition:0.3s;
+}
+
+.google-btn i{
+color:#ea4335;
+}
+
+/* Apple Button */
+
+.apple-btn{
+flex:1;
+padding:12px;
+border-radius:6px;
+border:none;
+background:#000;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+transition:0.3s;
+}
+
+/* Hover Effects */
+
+.google-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.apple-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px rgba(0,0,0,0.3);
+}
+
+.form-group select{
+width:100%;
+padding:14px;
+background:#2f2c44;
+border:none;
+border-radius:6px;
+color:#fff;
+outline:none;
+font-size:14px;
+}
+
+.form-group select:focus{
+border:1px solid #00d2ff;
+}
+
+/* Tablet Devices */
+@media (max-width:991px){
+
+.register-container{
+width:90%;
+grid-template-columns:1fr;
+}
+
+.register-left{
+display:none;
+}
+
+.register-right{
+padding:40px;
+}
+
+.form-row{
+flex-direction:column;
+gap:15px;
+}
+
+.back-home{
+top:20px;
+right:20px;
+}
+
+}
+
+
+/* Mobile Devices */
+@media (max-width:768px){
+
+body{
+padding:20px;
+align-items:flex-start;
+}
+
+.register-container{
+width:100%;
+border-radius:10px;
+}
+
+.register-right{
+padding:30px 25px;
+}
+
+.register-right h1{
+font-size:28px;
+}
+
+.register-right p{
+font-size:14px;
+}
+
+.form-group input,
+.form-group select{
+padding:12px;
+font-size:14px;
+}
+
+.register-btn{
+padding:12px;
+font-size:15px;
+}
+
+.checkbox{
+font-size:13px;
+}
+
+.social-login{
+flex-direction:column;
+gap:12px;
+}
+
+.google-btn,
+.apple-btn{
+font-size:14px;
+padding:12px;
+}
+
+.back-home{
+top:15px;
+right:15px;
+}
+
+.back-home a{
+padding:8px 14px;
+font-size:13px;
+}
+
+}
+
+
+/* Small Mobile */
+@media (max-width:480px){
+
+.register-right{
+padding:25px 20px;
+}
+
+.register-right h1{
+font-size:24px;
+}
+
+.register-btn{
+padding:10px;
+}
+
+.form-group input,
+.form-group select{
+padding:10px;
+font-size:13px;
+}
+
+.google-btn,
+.apple-btn{
+padding:10px;
+font-size:13px;
+}
+
+}
+
+.login-link{
+text-align:center;
+margin-top:18px;
+font-size:14px;
+color:#aaa;
+}
+
+.login-link a{
+color:#00d2ff;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.login-link a:hover{
+color:#a100ff;
+text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-container">
+
+<!-- LEFT SIDE -->
+
+<div class="register-left">
+
+<div>
+<img src="assets4/img/about/login.webp">
+<h2>Advancing Biotechnology Innovation</h2>
+</div>
+
+</div>
+
+
+<!-- RIGHT SIDE -->
+
+<div class="register-right">
+
+<div class="back-home">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i> Back to Home
+</a>
+</div>
+
+<h1>Create an Account</h1>
+
+<p>Join our biotechnology research platform</p>
+
+<form id="registerForm">
+
+<div class="form-row">
+
+<div class="form-group">
+<input type="text" id="firstName" placeholder="First Name">
+</div>
+
+<div class="form-group">
+<input type="text" id="lastName" placeholder="Last Name">
+</div>
+
+</div>
+
+<div class="form-group">
+<input type="email" id="email" placeholder="Email Address">
+</div>
+
+<div class="form-group">
+
+<select id="role" name="role">
+
+<option value="">Select Role</option>
+
+<option value="admin">Admin</option>
+
+<option value="researcher">Researcher</option>
+
+<option value="patient">Patient</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+<input type="password" id="password" placeholder="Enter your password">
+</div>
+
+<div class="form-group">
+<input type="password" id="confirmPassword" placeholder="Confirm password">
+</div>
+
+<div class="checkbox">
+<input type="checkbox" id="terms">
+<span>I agree to the Terms & Conditions</span>
+</div>
+
+<button type="submit" class="register-btn">Create Account</button>
+
+<p id="errorMsg" style="color:#ff4d4d;margin-top:10px;"></p>
+
+<p class="login-link">
+Already have an account? 
+<a href="login.html">Login</a>
+</p>
+
+<div class="divider">
+<span>Or register with</span>
+</div>
+
+<div class="social-login">
+
+<button class="google-btn">
+<i class="fab fa-google"></i> Google
+</button>
+
+<button class="apple-btn">
+<i class="fab fa-apple"></i> Apple
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("registerForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let firstName = document.getElementById("firstName").value.trim();
+let lastName = document.getElementById("lastName").value.trim();
+let email = document.getElementById("email").value.trim();
+let password = document.getElementById("password").value.trim();
+let confirmPassword = document.getElementById("confirmPassword").value.trim();
+let terms = document.getElementById("terms").checked;
+let errorMsg = document.getElementById("errorMsg");
+
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+let role = document.getElementById("role").value;
+
+
+if(firstName === "" || lastName === "" || email === "" || password === "" || confirmPassword === ""){
+errorMsg.innerText = "All fields are required.";
+return;
+}
+
+if(!emailPattern.test(email)){
+errorMsg.innerText = "Please enter a valid email address.";
+return;
+}
+
+if(!passwordPattern.test(password)){
+errorMsg.innerText = "Password must contain 8 characters, uppercase, lowercase, number and special character.";
+return;
+}
+
+if(password !== confirmPassword){
+errorMsg.innerText = "Passwords do not match.";
+return;
+}
+
+if(!terms){
+errorMsg.innerText = "Please accept the Terms & Conditions.";
+return;
+}
+
+if(role === ""){
+errorMsg.innerText = "Please select a role.";
+return;
+}
+
+/* SUCCESS MESSAGE */
+
+errorMsg.style.color="#00ff99";
+errorMsg.innerText="Registration successful! Redirecting...";
+
+/* REDIRECT TO LOGIN */
+
+setTimeout(function(){
+
+window.location.href="login.html";
+
+},1500);
+
+});
+
+</script>
+
+</body>
+</html>

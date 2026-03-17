@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | Stackly Biotechnology</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+background:#1d1c2b;
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+color:#fff;
+}
+
+/* CONTAINER */
+
+.login-container{
+width:1100px;
+background:#26243a;
+border-radius:12px;
+display:grid;
+grid-template-columns:1fr 1fr;
+overflow:hidden;
+box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* LEFT PANEL */
+
+.login-left{
+background:linear-gradient(180deg,#00d2ff,#a100ff);
+padding:40px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.login-left img{
+width:100%;
+border-radius:10px;
+}
+
+/* RIGHT PANEL */
+
+.login-right{
+padding:50px;
+}
+
+.login-right h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+.login-right p{
+color:#aaa;
+margin-bottom:25px;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:18px;
+}
+
+.form-group input,
+.form-group select{
+width:100%;
+padding:14px;
+background:#2f2c44;
+border:none;
+border-radius:6px;
+color:#fff;
+outline:none;
+}
+
+.form-group input:focus{
+border:1px solid #00d2ff;
+}
+
+/* BUTTON */
+
+.login-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:6px;
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.login-btn:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+.back-home{
+position:absolute;
+top:25px;
+right:80px;
+}
+
+.back-home a{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:10px 18px;
+border-radius:30px;
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+text-decoration:none;
+}
+
+.error{
+color:#ff4d4d;
+margin-top:10px;
+}
+
+.register-link{
+text-align:center;
+margin-top:18px;
+font-size:14px;
+color:#aaa;
+}
+
+.register-link a{
+color:#00d2ff;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
+}
+
+.register-link a:hover{
+color:#a100ff;
+text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.login-container{
+grid-template-columns:1fr;
+}
+
+.login-left{
+display:none;
+}
+
+}
+
+html, body {
+overflow-x: hidden;
+width: 100%;
+}
+
+.demo-credentials{
+    margin-top:20px;
+    padding:20px;
+    border-radius:12px;
+}
+
+.demo-credentials h3{
+    margin-bottom:15px;
+    font-size:18px;
+    color: #a100ff;
+    text-align: center;
+    font-weight:600;
+}
+
+.demo-card{
+    position: relative;
+    padding:12px 15px;
+    border-radius:12px;
+    background: rgba(255,255,255,0.05);
+    margin-bottom:10px;
+    transition:0.3s;
+    z-index:1;
+}
+
+/* Gradient Border Trick */
+.demo-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:12px;
+    padding:1px;   /* border thickness */
+
+    background: linear-gradient(135deg,#00d2ff,#a100ff);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events:none;
+}
+
+.demo-card:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.15);
+}
+
+.role{
+    font-weight:600;
+    color:#00d2ff;
+    margin-bottom:6px;
+}
+
+.cred{
+    font-size:13px;
+    color:#ddd;
+}
+
+.cred span{
+    color:#aaa;
+    font-size:12px;
+    margin-right:5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login-container">
+
+<div class="login-left">
+<img src="assets4/img/about/login2.webp">
+</div>
+
+<div class="login-right">
+
+<div class="back-home">
+<a href="index.html">
+<i class="fas fa-arrow-left"></i> Back to Home
+</a>
+</div>
+
+<h1>Login</h1>
+<p>Access your biotechnology dashboard</p>
+
+<form id="loginForm">
+
+<div class="form-group">
+<input type="email" id="email" placeholder="Email Address">
+</div>
+
+<div class="form-group">
+<input type="password" id="password" placeholder="Password">
+</div>
+
+<div class="form-group">
+<select id="role">
+<option value="">Select Role</option>
+<option value="admin">Admin</option>
+<option value="researcher">Researcher</option>
+<option value="patient">Patient</option>
+</select>
+</div>
+
+<button class="login-btn">Login</button>
+
+<p id="errorMsg" class="error" style="color:#ff4d4d;margin-top:10px;"></p>
+
+<p class="register-link">
+Don't have an account? 
+<a href="register.html">Create Account</a>
+</p>
+
+</form>
+
+<div class="demo-credentials">
+    <h3>Example Access</h3>
+
+    <div class="demo-card">
+        <div class="cred"><span>Email</span> admin@stackly.com</div>
+        <div class="cred"><span>Password</span> Admin@123</div>
+    </div>
+        </div>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("loginForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let email = document.getElementById("email").value.trim();
+let password = document.getElementById("password").value.trim();
+let role = document.getElementById("role").value;
+
+let errorMsg = document.getElementById("errorMsg");
+
+/* Correct Email Regex */
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/* Strong Password */
+let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/;
+
+if(email === "" || password === ""){
+errorMsg.innerText = "All fields are required";
+return;
+}
+
+if(!emailPattern.test(email)){
+errorMsg.innerText = "Invalid email format";
+return;
+}
+
+if(!passwordPattern.test(password)){
+errorMsg.innerText = "Password must contain 8 characters, uppercase, lowercase, number and special character.";
+return;
+}
+
+if(role === ""){
+errorMsg.innerText = "Please select role";
+return;
+}
+
+/* Role redirect */
+
+if(role === "admin"){
+localStorage.setItem("loginEmail", email);
+window.location.href="admin-dashboard.html";
+}
+if(role === "researcher"){
+localStorage.setItem("loginEmail", email);
+window.location.href="research-dashboard.html";
+}
+
+if(role === "patient"){
+localStorage.setItem("loginEmail", email);
+window.location.href="patient-dashboard.html";
+}
+
+});
+</script>
+
+</body>
+</html>

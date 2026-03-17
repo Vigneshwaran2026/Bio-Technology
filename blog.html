@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Oneo - HomePage 10</title>
+	<meta name="description" content="-----">
+	<meta name="keywords" content="-------">
+	<meta name="author" content="Themexriver">
+	<link rel="shortcut icon" href="assets4/img/logo/ficon.webp" type="image/x-icon">
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="assets4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets4/css/fontawesome-all.css">
+	<link rel="stylesheet" href="assets4/css/flaticon.css">
+	<link rel="stylesheet" href="assets4/css/animate.css">
+	<link rel="stylesheet" href="assets4/css/odometer-theme-default.css">
+	<link rel="stylesheet" href="assets4/css/slick.css">
+	<link rel="stylesheet" href="assets4/css/slick-theme.css">
+	<link rel="stylesheet" href="assets4/css/video.min.css">
+	<link rel="stylesheet" href="assets4/css/nice-select.css">
+	<link rel="stylesheet" href="assets4/css/rs6.css">
+	<link rel="stylesheet" href="assets4/css/style.css">
+
+    <style>
+.page-header{
+position:relative;
+
+/* background image */
+background:url("assets4/page-header.webp") center center/cover no-repeat;
+
+padding:160px 0 120px 0;
+overflow:hidden;
+}
+
+/* dark overlay */
+.page-header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:1;
+}
+
+/* keep content above overlay */
+.page-header-content{
+position:relative;
+z-index:2;
+margin-top:30px;
+}
+
+/* title */
+.page-header h1{
+font-size:70px;
+font-weight:700;
+color:#ffffff;
+font-family:"Rajdhani";
+margin-bottom:20px;
+}
+
+/* breadcrumb */
+.breadcrumb a{
+color:#ffffff;
+font-weight:600;
+}
+
+.breadcrumb .active{
+color:#ff00fa;
+}
+
+/* Tablet */
+@media (max-width:991px){
+
+.page-header{
+padding:120px 0 90px 0;
+background-position:center;
+}
+
+.page-header h1{
+font-size:50px;
+}
+
+.bg-text{
+font-size:160px;
+}
+
+}
+
+/* Mobile */
+@media (max-width:767px){
+
+.page-header{
+padding:100px 0 80px 0;
+text-align:center;
+}
+
+.page-header h1{
+font-size:36px;
+line-height:1.3;
+}
+
+.page-header-content{
+margin-top:10px;
+}
+
+.breadcrumb{
+font-size:16px;
+}
+
+.bg-text{
+font-size:110px;
+top:55%;
+}
+
+.left-pattern{
+display:none;
+}
+
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+
+.page-header{
+padding:90px 0 70px 0;
+}
+
+.page-header h1{
+font-size:30px;
+}
+
+.bg-text{
+font-size:80px;
+}
+
+.breadcrumb{
+font-size:15px;
+}
+
+}
+
+.bio-blog-page{
+padding:100px 0;
+background:#f4f6fb;
+}
+
+.blog-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:50px;
+}
+
+/* BLOG POSTS */
+
+.blog-post{
+background:#fff;
+border-radius:6px;
+overflow:hidden;
+margin-bottom:40px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.blog-post img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.post-content{
+padding:25px;
+}
+
+.post-content h3{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.post-meta{
+display:flex;
+gap:20px;
+margin-bottom:10px;
+color:#888;
+}
+
+.post-meta i{
+color:#ff00fa;
+}
+
+.read-btn{
+color:#00d2ff;
+font-weight:600;
+}
+
+/* SIDEBAR */
+
+.blog-sidebar{
+display:flex;
+flex-direction:column;
+gap:30px;
+}
+
+.sidebar-widget{
+background:#fff;
+padding:25px;
+border-radius:6px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.sidebar-widget h4{
+margin-bottom:15px;
+}
+
+.sidebar-widget ul{
+list-style:none;
+padding:0;
+}
+
+.sidebar-widget li{
+padding:8px 0;
+border-bottom:1px solid #eee;
+}
+
+/* RECENT POSTS */
+
+.recent-post{
+display:flex;
+gap:10px;
+margin-bottom:12px;
+}
+
+.recent-post img{
+width:60px;
+height:60px;
+object-fit:cover;
+}
+
+/* CONTACT BOX */
+
+.contact-widget{
+background:linear-gradient(135deg,#00d2ff,#a100ff);
+color:#fff;
+padding:30px;
+border-radius:8px;
+text-align:center;
+}
+
+.contact-widget a{
+display:inline-block;
+margin-top:10px;
+padding:12px 25px;
+background:#ffffff;
+color:#333;
+border-radius:5px;
+font-weight:600;
+text-decoration:none;
+transition:all 0.3s ease;
+}
+
+/* Hover effect */
+.contact-widget a:hover{
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* TAGS */
+
+.tags span{
+display:inline-block;
+background:#eee;
+padding:5px 10px;
+margin:5px;
+border-radius:4px;
+}
+
+/* PAGINATION */
+
+.blog-pagination{
+margin-top:30px;
+}
+
+.blog-pagination a{
+display:inline-block;
+padding:10px 15px;
+margin-right:5px;
+background:#fff;
+border-radius:4px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.blog-pagination a:hover{
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+color:#fff;
+transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.blog-post{
+background:#fff;
+border-radius:6px;
+overflow:hidden;
+margin-bottom:40px;
+border:2px solid transparent;
+transition:all 0.3s ease;
+}
+
+.blog-post:hover{
+border-image:linear-gradient(90deg,#00d2ff,#a100ff) 1;
+transform:translateY(-5px);
+}
+
+/* Tablet Devices */
+@media (max-width:991px){
+
+.blog-layout{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.blog-post img{
+height:260px;
+}
+
+.post-content h3{
+font-size:22px;
+}
+
+.blog-sidebar{
+gap:25px;
+}
+
+}
+
+/* Mobile Devices */
+@media (max-width:767px){
+
+.bio-blog-page{
+padding:70px 0;
+}
+
+.blog-post img{
+height:220px;
+}
+
+.post-content{
+padding:20px;
+}
+
+.post-content h3{
+font-size:20px;
+line-height:1.4;
+}
+
+.post-meta{
+flex-direction:column;
+gap:5px;
+font-size:14px;
+}
+
+.sidebar-widget{
+padding:20px;
+}
+
+.recent-post img{
+width:50px;
+height:50px;
+}
+
+.blog-pagination{
+text-align:center;
+}
+
+.blog-pagination a{
+padding:8px 12px;
+font-size:14px;
+}
+
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+
+.blog-post img{
+height:200px;
+}
+
+.post-content h3{
+font-size:18px;
+}
+
+.contact-widget{
+padding:25px 20px;
+}
+
+.contact-widget a{
+padding:10px 20px;
+font-size:14px;
+}
+
+.tags span{
+font-size:12px;
+padding:4px 8px;
+}
+
+}
+
+    </style>
+</head>
+<body class="xis-it-body">
+	<div id="preloader">
+
+<div class="bio-loader">
+
+<div class="bio-logo">
+<img src="assets4/img/logo/logo.webp">
+</div>
+
+<div class="molecule-loader">
+
+<span class="atom a1"></span>
+<span class="atom a2"></span>
+<span class="atom a3"></span>
+<span class="atom a4"></span>
+<span class="atom a5"></span>
+
+</div>
+
+<p class="loader-text">Initializing Bio Technology...</p>
+
+</div>
+
+</div>
+
+	<div class="up">
+		<a href="404.html" class="scrollup text-center"><i class="fas fa-chevron-up"></i></a>
+	</div>
+
+<!-- Start of header section
+	============================================= -->
+	<header id="xis-it-header" class="xis-it-header-section">
+		<div class="xis-it-header-top">
+			<div class="container">
+				<div class="xis-it-header-top-content d-flex justify-content-between">
+					<div class="header-social ul-li">
+						<ul class="social-box">
+							<li><a href="404.html"><i  class="fab fa-facebook-f"></i></a></li>
+							<li><a href="404.html"><i  class="fab fa-twitter"></i></a></li>
+							<li><a href="404.html"><i class="fab fa-dribbble"></i></a></li>
+							<li><a href="404.html"><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<div class="header-cta-login d-flex align-items-center">
+						<div class="login-btn">
+							<button><i class="fas fa-user-circle"></i> Salem, Tamilnadu, India.</button>
+						</div>
+						<div class="header-cta">
+							<i class="fas fa-phone-square"></i> Call Now: <a>+91 1234567890</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="xis-it-header-main-menu-wrap">
+			<div class="container">
+				<div class="main-menu-content d-flex justify-content-between align-items-center">
+					<div class="brand-logo1">
+						<a href="index.html"><img src="assets4/img/logo/logo.webp" alt="logo"></a>
+					</div>
+					<div class="xis-it-main-menu-navigation">
+						<nav class="xis-it-main-navigation-area clearfix ul-li">
+							<ul id="xis-it-main-nav" class="nav navbar-nav clearfix">
+									<li><a href="index.html">Home</a></li>
+										<li><a href="about.html">About us</a></li>
+										<li><a href="services.html">Services</a></li>
+										<li><a href="research.html">Research</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="faq.html">FAQ's</a></li>
+								<li><a href="contact.html">Contact</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header-buttons d-flex align-items-center">
+
+    <!-- Login Button -->
+    <a class="login-btn1 d-flex justify-content-center align-items-center" href="login.html">
+        Login
+    </a>
+
+    <!-- Get Started Button -->
+    <a class="start-btn d-flex justify-content-center align-items-center" href="register.html">
+        Get Started
+    </a>
+
+</div>
+				</div>
+				<div class="mobile_menu position-relative">
+					<div class="mobile_menu_button open_mobile_menu">
+						<i class="fal fa-bars"></i>
+					</div>
+					<div class="mobile_menu_wrap">
+						<div class="mobile_menu_overlay open_mobile_menu"></div>
+						<div class="mobile_menu_content">
+							<div class="mobile_menu_close open_mobile_menu">
+								<i class="fal fa-times"></i>
+							</div>
+							<div class="m-brand-logo">
+								<a  href="index.html"><img src="assets4/img/logo/logo.webp" alt=""></a>
+							</div>
+							<nav class="mobile-main-navigation  clearfix ul-li">
+								<ul id="xis-main-nav" class="nav navbar-nav clearfix">
+									<li><a href="index.html">Home</a></li>
+										<li><a href="about.html">About us</a></li>
+										<li><a href="services.html">Services</a></li>
+										<li><a href="research.html">Research</a></li>
+										<li><a href="blog.html">Blog</a></li>
+										<li><a href="faq.html">FAQ's</a></li>
+								<li><a href="contact.html">Contact</a></li>
+									<!-- Mobile Buttons -->
+<li class="mobile-login-btn">
+<a href="login.html">Login</a>
+</li>
+
+<li class="mobile-start-btn">
+<a href="register.html">Get Started</a>
+</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+					<!-- /Mobile-Menu -->
+				</div>
+			</div>
+		</div>
+	</header>
+<!-- End of header section
+	============================================= -->
+
+<section class="page-header">
+<div class="container">
+
+<div class="page-header-content">
+
+<h1>Biotechnology News</h1>
+
+<div class="breadcrumb">
+<a href="index.html">Home</a>
+<span>➜</span>
+<a class="active">Blog</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="bio-blog-page">
+
+<div class="container">
+
+<div class="blog-layout">
+
+<!-- LEFT SIDE BLOG -->
+<div class="blog-left">
+
+<!-- BLOG POST -->
+<div class="blog-post wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+<img src="assets4/img/blog/b1.webp">
+
+<div class="post-content">
+<h3>Breakthroughs in Genetic Engineering and DNA Research</h3>
+
+<div class="post-meta">
+<span><i class="fas fa-calendar"></i> 12 March, 2026</span>
+<span><i class="fas fa-comment"></i> 5 Comments</span>
+</div>
+
+<p>
+Recent innovations in genetic engineering and CRISPR technology are
+accelerating discoveries in biotechnology and medical science.
+</p>
+
+<a href="404.html" class="read-btn">Read More →</a>
+
+</div>
+</div>
+
+
+<div class="blog-post wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+<img src="assets4/img/blog/b2.webp">
+
+<div class="post-content">
+<h3>Advancements in Biotechnology for Medical Innovation</h3>
+
+<div class="post-meta">
+<span><i class="fas fa-calendar"></i> 05 March, 2026</span>
+<span><i class="fas fa-comment"></i> 8 Comments</span>
+</div>
+
+<p>
+Biotechnology research is driving the development of innovative
+diagnostics, vaccines, and life-saving treatments worldwide.
+</p>
+
+<a href="404.html" class="read-btn">Read More →</a>
+
+</div>
+</div>
+
+
+<div class="blog-post wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+<img src="assets4/img/blog/b3.webp">
+
+<div class="post-content">
+<h3>Genome Sequencing Technology Transforming Healthcare</h3>
+
+<div class="post-meta">
+<span><i class="fas fa-calendar"></i> 20 Feb, 2026</span>
+<span><i class="fas fa-comment"></i> 3 Comments</span>
+</div>
+
+<p>
+Genome sequencing enables researchers to understand diseases and
+develop personalized medicine solutions.
+</p>
+
+<a href="404.html" class="read-btn">Read More →</a>
+
+</div>
+</div>
+
+<!-- PAGINATION -->
+<div class="blog-pagination">
+
+<a href="404.html">1</a>
+<a href="404.html">2</a>
+<a href="404.html">3</a>
+
+</div>
+
+</div>
+
+
+
+<!-- RIGHT SIDEBAR -->
+<div class="blog-sidebar">
+
+
+<!-- CATEGORIES -->
+<div class="sidebar-widget wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+
+<h4>Categories</h4>
+
+<ul>
+<li>Genetic Engineering</li>
+<li>Molecular Biology</li>
+<li>Bioinformatics</li>
+<li>Clinical Biotechnology</li>
+<li>Medical Innovation</li>
+</ul>
+
+</div>
+
+
+<!-- RECENT POSTS -->
+<div class="sidebar-widget wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+
+<h4>Recent News</h4>
+
+<div class="recent-post">
+<img src="assets4/img/about/p3.webp">
+<p>DNA Research Breakthrough</p>
+</div>
+
+<div class="recent-post">
+<img src="assets4/img/about/p4.webp">
+<p>Biotech Medical Innovation</p>
+</div>
+
+<div class="recent-post">
+<img src="assets4/img/about/p5.webp">
+<p>Genome Sequencing Technology</p>
+</div>
+
+</div>
+
+
+<!-- CONTACT BOX -->
+<div class="contact-widget wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+
+<h4>Need Research Support?</h4>
+
+<p>
+Our biotechnology experts provide advanced research solutions
+for laboratories and scientific institutions.
+</p>
+
+<a href="contact.html">Contact Us</a>
+
+</div>
+
+
+<!-- TAGS -->
+<div class="sidebar-widget wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+
+<h4>Tags</h4>
+
+<div class="tags">
+<span>DNA</span>
+<span>Genome</span>
+<span>Biotech</span>
+<span>Medical</span>
+<span>Research</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Start of Footer section
+	============================================= -->
+	<footer id="xis-it-footer" class="xis-it-footer-section" data-background="assets4/img/bg/footer-bg.webp"> 
+		<div class="xis-it-footer-newslatter position-relative">
+			<div class="container">
+				<div class="xis-it-footer-newslatter-content-area d-flex justify-content-between align-items-center position-relative">
+					<div class="xis-it-footer-newlatter-text-wrap xis-it-headline pera-content">
+						<h2>Subscribe For Newsletter</h2>
+						<p>Subscribe to our newsletter and we will bring
+						you the latest news.</p>
+					</div>
+					<div class="xis-it-footer-newslatter-form">
+
+<form id="newsletterForm">
+
+<input 
+type="email" 
+id="emailInput"
+name="email" 
+placeholder="Enter Your Email Address"
+>
+
+<span id="emailError" style="color:red;font-size:14px;"></span>
+
+<button type="submit">Sign Up</button>
+
+</form>
+
+</div>
+<script>
+
+document.getElementById("newsletterForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let email = document.getElementById("emailInput").value.trim();
+let error = document.getElementById("emailError");
+
+/* Strong Email Regex */
+
+let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+if(email === ""){
+    
+error.innerHTML = "Please fill the field";
+
+return;
+
+}
+
+if(!emailPattern.test(email)){
+
+error.innerHTML = "Please enter a valid email address";
+
+return;
+
+}
+
+/* If valid */
+
+error.innerHTML = "";
+
+window.location.href = "404.html";
+
+});
+
+</script>
+				</div>
+			</div>
+		</div>
+		<div class="xis-it-footer-widget-wrapper">
+<div class="container">
+<div class="row g-4">
+
+<!-- Logo Section -->
+<div class="col-lg-3 col-md-6">
+<div class="xis-it-footer-widget logo-widget-section">
+
+<div class="brand-logo">
+<a href="index.html"><img src="assets4/img/logo/logo.webp" alt=""></a>
+</div>
+
+<div class="contact-address">
+<h3>+91 1234567890</h3>
+<p>
+Salem, Tamilnadu, India.
+<a>contact@stackly.com</a>
+</p>
+
+<div class="footer-social">
+<ul class="social-box">
+<li><a href="404.html"><i class="fab fa-facebook-f"></i></a></li>
+<li><a href="404.html"><i class="fab fa-twitter"></i></a></li>
+<li><a href="404.html"><i class="fab fa-dribbble"></i></a></li>
+<li><a href="404.html"><i class="fab fa-linkedin"></i></a></li>
+</ul>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- Biotechnology Services -->
+<div class="col-lg-3 col-md-6">
+<div class="xis-it-footer-widget">
+
+<h2 class="widget-title">Biotech Services</h2>
+
+<ul class="menu-widget">
+
+<li><a href="404.html">Genetic Research</a></li>
+
+<li><a href="404.html">DNA Sequencing</a></li>
+
+<li><a href="404.html">Molecular Diagnostics</a></li>
+
+<li><a href="404.html">Biotech Innovation Lab</a></li>
+
+</ul>
+
+</div>
+</div>
+
+<!-- Services -->
+<div class="col-lg-3 col-md-6">
+<div class="xis-it-footer-widget">
+<h2 class="widget-title">Quick Links</h2>
+<ul class="menu-widget">
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="research.html">Research</a></li>
+<li><a href="blog.html">Blog</a></li>
+</ul>
+</div>
+</div>
+
+<!-- Research -->
+<div class="col-lg-3 col-md-6">
+<div class="xis-it-footer-widget">
+<h2 class="widget-title">Research Areas</h2>
+<ul class="menu-widget">
+<li><a href="404.html">Genetic Engineering</a></li>
+<li><a href="404.html">Molecular Biology</a></li>
+<li><a href="404.html">Bioinformatics</a></li>
+<li><a href="404.html">Clinical Biotechnology</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="xis-it-footer-copyright">
+<div class="container">
+<div class="xis-it-footer-copyright-content d-flex justify-content-between align-items-center">
+
+<div class="xis-it-copyright-text">
+© Copyright 2026 All Rights Reserved.
+</div>
+
+<div class="xis-it-copyright-text">
+Made by <a href="index.html">Stackly</a>
+</div>
+
+</div>
+</div>
+</div>
+		</div>
+	</footer>	
+<!-- End of Footer section
+	============================================= -->	
+
+
+	<!-- For Js Library -->
+	<script src="assets4/js/jquery.min.js"></script>
+	<script src="assets4/js/bootstrap.min.js"></script>
+	<script src="assets4/js/popper.min.js"></script>
+	<script src="assets4/js/appear.js"></script>
+	<script src="assets4/js/slick.js"></script>
+	<script src="assets4/js/jquery.counterup.min.js"></script>
+	<script src="assets4/js/waypoints.min.js"></script>
+	<script src="assets4/js/odometer.js"></script>
+	<script src="assets4/js/wow.min.js"></script>
+	<script src="assets4/js/parallax.min.js"></script>
+	<script src="assets4/js/parallax-scroll.js"></script>
+	<script src="assets4/js/typer.js"></script>
+	<script src="assets4/js/countdown.js"></script>
+	<script src="assets4/js/jquery.nice-select.min.js"></script>
+	<script src="assets4/js/imagesloaded.pkgd.min.js"></script>
+	<script src="assets4/js/jquery.magnific-popup.min.js"></script>
+	<script src="assets4/js/isotope.pkgd.js"></script>
+	<script src="assets4/js/rbtools.min.js"></script>
+	<script src="assets4/js/rs6.min.js"></script>
+	<script src="assets4/js/script.js"></script>
+</body>
+</html>			

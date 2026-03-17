@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>404 - Biotech Error</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding-top: 80px;
+text-align:center;
+background:linear-gradient(135deg,#001b3a,#4b0082);
+color:white;
+overflow:hidden;
+
+}
+
+
+
+/* Floating particles */
+
+body::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle,#00d2ff44 2px,transparent 2px);
+background-size:60px 60px;
+animation:particles 20s linear infinite;
+}
+
+@keyframes particles{
+0%{transform:translateY(0)}
+100%{transform:translateY(-200px)}
+}
+
+/* container */
+
+.container{
+position:relative;
+z-index:2;
+max-width:700px;
+}
+
+/* 404 text */
+
+.error{
+
+font-size:160px;
+font-weight:900;
+padding-bottom: 100px;
+
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+-webkit-background-clip:text;
+color:transparent;
+
+text-shadow:0 0 25px rgba(0,210,255,0.6);
+
+}
+
+/* DNA animation */
+
+.dna{
+position:relative;
+width:200px;
+height:160px;
+margin:30px auto;
+}
+
+.strand{
+
+position:absolute;
+
+width:4px;          /* thinner line */
+height:80px;        /* reduced height */
+
+left:50%;
+transform:translateX(-50%);
+
+background:linear-gradient(#00d2ff,#a100ff);
+
+border-radius:10px;
+
+animation:dnaRotate 4s linear infinite;
+
+}
+.strand:nth-child(2){
+animation-delay:2s;
+}
+
+@keyframes dnaRotate{
+
+0%{
+transform:translateX(-50%) rotate(0deg);
+}
+
+100%{
+transform:translateX(-50%) rotate(180deg);
+}
+
+}
+
+.container{
+position:relative;
+z-index:2;
+max-width:700px;
+transform:translateY(-80px);
+}
+
+/* text */
+
+h2{
+font-size:32px;
+margin-top:-50px;
+}
+
+p{
+margin:20px 0;
+color:#ddd;
+font-size:18px;
+}
+
+/* button */
+
+.btn-home{
+
+display:inline-block;
+padding:15px 36px;
+
+border-radius:40px;
+text-decoration:none;
+
+background:linear-gradient(90deg,#00d2ff,#a100ff);
+
+color:white;
+font-weight:600;
+
+box-shadow:0 0 20px rgba(0,210,255,0.6);
+
+transition:0.3s;
+
+}
+
+.btn-home:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 30px rgba(161,0,255,0.9);
+
+}
+
+@media (max-width:991px){
+
+.error{
+font-size:120px;
+}
+
+.dna{
+width:150px;
+height:120px;
+margin:20px auto;
+}
+
+.strand{
+height:70px;
+}
+
+h2{
+font-size:28px;
+margin-top:-30px;
+}
+
+p{
+font-size:16px;
+}
+
+.container{
+transform:translateY(-60px);
+}
+
+}
+
+@media (max-width:768px){
+
+body{
+padding-top:40px;
+}
+
+.error{
+font-size:90px;
+}
+
+.dna{
+width:120px;
+height:100px;
+margin:15px auto;
+}
+
+.strand{
+height:60px;
+}
+
+h2{
+font-size:24px;
+margin-top:-20px;
+}
+
+p{
+font-size:15px;
+margin:15px 0;
+}
+
+.btn-home{
+padding:14px 30px;
+font-size:15px;
+}
+
+.container{
+transform:translateY(-40px);
+}
+
+}
+
+@media (max-width:480px){
+
+.error{
+font-size:70px;
+}
+
+.dna{
+width:90px;
+height:80px;
+}
+
+.strand{
+height:50px;
+width:3px;
+}
+
+h2{
+font-size:20px;
+margin-top:-10px;
+}
+
+p{
+font-size:14px;
+}
+
+.btn-home{
+padding:12px 26px;
+font-size:14px;
+}
+
+.container{
+transform:translateY(-20px);
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="error">404</div>
+
+
+<h2>DNA Sequence Not Found</h2>
+
+<p>
+The page you are looking for is missing from our research database.
+</p>
+
+<a href="admin-dashboard.html" class="btn-home">
+Back To Dashboards
+</a>
+
+</div>
+
+</body>
+
+</html>
