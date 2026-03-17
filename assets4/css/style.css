@@ -3367,3 +3367,45 @@ animation:pulse 2s infinite;
 50%{opacity:1}
 100%{opacity:.4}
 }
+
+@media (max-width: 768px){
+
+    /* Fix Hero Height */
+    .xis-it-slider-section{
+        height: auto !important;
+        min-height: 500px;
+    }
+
+    /* Reduce About Section Space */
+    .xis-it-about-section{
+        padding: 20px 0px 60px !important;
+    }
+
+}
+
+@media (max-width:768px){
+
+    #rev_slider_2_1_wrapper{
+        margin-bottom:0 !important;
+        padding-bottom:0 !important;
+    }
+
+}
+
+
+@media (max-width:768px){
+
+    .xis-it-slider-section{
+        height:auto !important;
+        min-height:450px;
+    }
+
+}
+
+@media (max-width:768px){
+
+    rs-module-wrap{
+        height:auto !important;
+    }
+
+}
