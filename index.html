@@ -152,7 +152,7 @@
 <!-- Start of Slider section
 	============================================= -->
 	<section id="xis-it-slider" class="xis-it-slider-section position-relative">
-		<rs-module-wrap id="rev_slider_2_1_wrapper" data-alias="Xisma-It_Source" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+		<rs-module-wrap id="rev_slider_2_1_wrapper" data-alias="Xisma-It_Source" data-source="gallery">
 			<rs-module id="rev_slider_2_1" style="" data-version="6.5.16">
 				<rs-slides>
 					<rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide" data-thumb="assets4/slider1.webp" data-in="o:0;" data-out="a:false;">
@@ -1819,6 +1819,24 @@ Made by Stackly
 	<script src="assets4/js/rbtools.min.js"></script>
 	<script src="assets4/js/rs6.min.js"></script>
 	<script src="assets4/js/script.js"></script>
+
+	<script>
+		let lastWidth = window.innerWidth;
+
+window.addEventListener("resize", function () {
+    let currentWidth = window.innerWidth;
+
+    // Only reload if width actually changed (F12 triggers this)
+    if (currentWidth !== lastWidth) {
+        lastWidth = currentWidth;
+
+        // small delay to avoid multiple reloads
+        setTimeout(function () {
+            location.reload();
+        }, 300);
+    }
+});
+	</script>
 
 </body>
 </html>			
