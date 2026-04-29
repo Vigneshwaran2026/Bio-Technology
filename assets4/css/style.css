@@ -1,23 +1,32 @@
 @charset "UTF-8";
-/*----------------------------------------------------
 
-1. Global Area 
-2. Header Section
-
-=====================================================================*/
-/*=========
-Font load
-===========*/
 @import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
-/*=========
-Color Code
-===========*/
+
+
+:root {
+  --primary: #0B3C5D;     /* Deep Biotech Blue */
+  --secondary: #328CC1;   /* Soft Scientific Blue */
+  --accent: #2ECC71;      /* Bio Green */
+  --bg-light: #F4F8FB;    /* Light Clinical Background */
+  --white: #FFFFFF;
+  --text-dark: #1B1B1B;
+  --text-light: #8B888E;
+  --border: #E5EAF0;
+}
+
 .xis-it-blog-item .inner-text .inner-meta a i, .xis-it-blog-item .inner-text .inner-meta a, .xis-it-instagram-feature-list li:before, .xis-it-testimonial-item .inner-author .author-text h3, .xis-it-counter-item .inner-text p span, .xis-it-portfolio-filter-btn button.is-checked, .xis-it-pricing-inner-item .xis-it-pricing-list-item li:before, .xis-it-pricing-inner-item .xis-it-price-inner-title .price-head, .xis-it-sservice-cta-content .xis-it-service-text-wrap .xis-it-service-cta-btn .cia-btn-text span, .xis-it-system-feature-list li:before, .xis-it-system-feature-text-wrap h3 span, .xis-it-about-exp-wrap .inner-text p, .xis-it-about-exp-wrap .inner-text h3 sup, .xis-it-header-top-content .header-cta-login i {
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.xis-it-blog-item .inner-text .inner-meta a,
+.xis-it-blog-item .inner-text .inner-meta a i {
+    background: none !important;
+    -webkit-text-fill-color: #e6dfdf !important;
+    color: #e6dfdf !important;
 }
 
 /*global area*/
@@ -145,7 +154,7 @@ select:visited {
   position: fixed;
   border-radius: 100%;
   line-height: 55px;
-  background-color: #FFB816;
+  background-color: var(--accent);
 }
 .scrollup i {
   color: #fff;
@@ -163,17 +172,17 @@ select:visited {
 }
 
 .xis-it-section-title span {
-  color: #10c4fb;
+  color: var(--secondary);
   font-weight: 700;
   padding: 15px 30px;
   border-radius: 30px;
   display: inline-block;
   font-family: "Rajdhani";
   text-transform: uppercase;
-  background-color: #dcf6ff;
+  background-color: var(--bg-light);
 }
 .xis-it-section-title h2 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 60px;
   font-weight: 700;
   padding: 15px 0px;
@@ -190,8 +199,8 @@ select:visited {
   border-radius: 5px;
   font-family: "Rajdhani";
   background-size: 200%, 1px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#08cbfb), color-stop(50%, #f606f8), to(#08cbfb));
-  background-image: linear-gradient(90deg, #08cbfb 0%, #f606f8 50%, #08cbfb);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), color-stop(50%, var(--primary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--secondary));
 }
 .xis-it-btn a:hover {
   background-position: 120%;
@@ -220,7 +229,7 @@ select:visited {
           transform: scaleY(1);
 }
 .xis-it-header-section .dropdown:hover:after {
-  color: #01b2ec;
+  color: var(--secondary);
 }
 .xis-it-header-section .dropdown:after {
   top: 2px;
@@ -438,7 +447,7 @@ select:visited {
   color: #fff !important;
 }
 .xis-it-header-section .mobile_menu .mobile_menu_content .mobile-main-navigation .navbar-nav .dropdown-menu li a:hover {
-  color: #FFB816;
+  color: var(--accent);
   background-color: transparent;
 }
 .xis-it-header-section .mobile_menu .dropdown {
@@ -466,11 +475,11 @@ select:visited {
 }
 
 .xis-it-header-top-content {
-  padding: 20px 0px;
+  padding: 8px 0px; /* reduce height */
 }
 .xis-it-header-top-content .header-social a {
   z-index: 1;
-  color: #2d1b41;
+  color: var(--text-dark);
   margin-right: 25px;
   position: relative;
 }
@@ -485,8 +494,8 @@ select:visited {
   border-radius: 8px;
   -webkit-transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-header-top-content .header-social a:hover {
   color: #fff;
@@ -542,12 +551,12 @@ select:visited {
   bottom: 30px;
   margin: 0 auto;
   position: absolute;
-  background-color: #01b2ec;
+  background-color: var(--secondary);
   -webkit-transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .xis-it-main-menu-navigation li:hover a {
-  color: #01b2ec;
+  color: var(--secondary);
 }
 .xis-it-main-menu-navigation li:hover a:before {
   width: 100%;
@@ -561,8 +570,8 @@ select:visited {
   border-radius: 5px;
   font-family: "Rajdhani";
   background-size: 200%, 1px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#08cbfb), color-stop(50%, #f606f8), to(#08cbfb));
-  background-image: linear-gradient(90deg, #08cbfb 0%, #f606f8 50%, #08cbfb);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), color-stop(50%, var(--primary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--secondary));
 }
 .xis-it-header-btn a:hover {
   background-position: 120%;
@@ -574,7 +583,7 @@ select:visited {
   z-index: 20;
   position: fixed;
   padding: 15px 0px;
-  background-color: #172231;
+  background-color: var(--primary);
   -webkit-animation-duration: 0.7s;
           animation-duration: 0.7s;
   -webkit-animation-fill-mode: both;
@@ -757,8 +766,8 @@ select:visited {
   -webkit-transition: 500ms all ease !important;
   transition: 500ms all ease !important;
   background-size: 200%, 1px !important;
-  background: -webkit-gradient(linear, left top, right top, from(#08cbfb), color-stop(50%, #f606f8), to(#08cbfb));
-  background: linear-gradient(90deg, #08cbfb 0%, #f606f8 50%, #08cbfb);
+  background: -webkit-gradient(linear, left top, right top, from(var(--secondary)), color-stop(50%, var(--primary)), to(var(--secondary)));
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--secondary));
 }
 #rev_slider_2_1_wrapper #mc_embed_signup input[type=submit]:hover {
   background-position: 100% !important;
@@ -794,7 +803,7 @@ select:visited {
   left: -55px;
 }
 .xis-it-about-exp-wrap .inner-text h3 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 110px;
   font-weight: 700;
   line-height: 0.75;
@@ -825,8 +834,8 @@ select:visited {
   font-family: "Rajdhani";
   display: inline-block;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -838,11 +847,11 @@ select:visited {
   width: 100%;
   height: 2px;
   position: absolute;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-about-video-play-wrap .xis-it-video-text h3 {
-  color: #2d1b41;
+  color: var(--text-dark);
   font-size: 22px;
   font-weight: 700;
   max-width: 230px;
@@ -879,8 +888,8 @@ select:visited {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   background-size: 200%, 1px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#08cbfb), color-stop(50%, #f606f8), to(#08cbfb));
-  background-image: linear-gradient(90deg, #08cbfb 0%, #f606f8 50%, #08cbfb);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), color-stop(50%, var(--primary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--secondary));
 }
 .xis-it-video-play-img-btn .xis-it-video-btn a:hover {
   background-position: 120%;
@@ -1014,8 +1023,8 @@ select:visited {
           animation: XisIt_animation_1 10s infinite linear alternate;
   -webkit-transform: skew(-40deg) rotate(-0.5deg);
           transform: skew(-40deg) rotate(-0.5deg);
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-system-feature-section .xis-it-sf-outer-shape2 {
   top: auto;
@@ -1027,8 +1036,8 @@ select:visited {
           animation: XisIt_animation_1 15s infinite linear alternate;
   -webkit-transform: skew(-40deg) rotate(-0.5deg);
           transform: skew(-40deg) rotate(-0.5deg);
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#b83afa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #b83afa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--secondary) 100%);
 }
 .xis-it-system-feature-section .xis-it-sf-shape1 {
   right: 0;
@@ -1068,8 +1077,8 @@ select:visited {
   height: 2px;
   content: "";
   position: absolute;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-system-feature-text-wrap h2 {
   color: #fff;
@@ -1091,7 +1100,7 @@ select:visited {
   border-top-left-radius: 90px;
 }
 .xis-it-system-feature-list h3 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
@@ -1127,8 +1136,8 @@ select:visited {
   border-top-left-radius: 90px;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-system-feature-list-wrap .appoint-btn a {
   z-index: 1;
@@ -1150,8 +1159,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-system-feature-list-wrap .appoint-btn a i {
   margin-left: 10px;
@@ -1192,7 +1201,7 @@ select:visited {
   background-color: #f7f7f7;
 }
 .xis-it-extra-feature-item .inner-text h3 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 18px;
   font-weight: 700;
 }
@@ -1388,8 +1397,8 @@ select:visited {
   border-radius: 100%;
   -webkit-animation: border-transform 10s linear infinite alternate forwards;
           animation: border-transform 10s linear infinite alternate forwards;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-service-item .inner-icon:after {
   top: 0;
@@ -1400,7 +1409,7 @@ select:visited {
   height: 125px;
   border-radius: 100%;
   position: absolute;
-  background-color: #f8f6f4;
+  background-color: var(--bg-light);
 }
 .xis-it-service-item .inner-text h3 {
   color: #1b1b1b;
@@ -1424,8 +1433,8 @@ select:visited {
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
   border-top-left-radius: 70px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-service-item .xis-it-service-shape:after {
   left: 0;
@@ -1436,8 +1445,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-service-item .xis-it-bottom-shape1,
 .xis-it-service-item .xis-it-bottom-shape2 {
@@ -1507,8 +1516,8 @@ select:visited {
   border-radius: 30px;
   -webkit-transform: skewX(4deg);
           transform: skewX(4deg);
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#b83afa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #b83afa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--secondary) 100%);
 }
 .xis-it-sservice-cta-content:after {
   top: 0;
@@ -1551,7 +1560,7 @@ select:visited {
           animation: icon-bounce 0.8s ease-out infinite;
 }
 .xis-it-sservice-cta-content .xis-it-service-text-wrap .xis-it-service-cta-btn .cia-btn-icon i {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 30px;
 }
 .xis-it-sservice-cta-content .xis-it-service-text-wrap .xis-it-service-cta-btn .cia-btn-text span {
@@ -1560,7 +1569,7 @@ select:visited {
   font-family: "Rajdhani";
 }
 .xis-it-sservice-cta-content .xis-it-service-text-wrap .xis-it-service-cta-btn .cia-btn-text h3 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 30px;
   font-weight: 700;
 }
@@ -1623,8 +1632,8 @@ select:visited {
   border-top-left-radius: 100px;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-pricing-inner-item:after {
   top: 0;
@@ -1648,13 +1657,13 @@ select:visited {
   display: inline-block;
 }
 .xis-it-pricing-inner-item .xis-it-price-inner-title h3 {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 25px;
   font-weight: 700;
 }
 .xis-it-pricing-inner-item .xis-it-price-inner-title .price-rate {
   font-weight: 500;
-  color: #2d1b41;
+  color: var(--text-dark);
   font-size: 20px;
 }
 .xis-it-pricing-inner-item .xis-it-pricing-img {
@@ -1683,7 +1692,7 @@ select:visited {
   border-top: 2px solid #f8f7f5;
 }
 .xis-it-pricing-inner-item .xis-it-pricing-list-item li {
-  color: #140d1c;
+  color: var(--text-dark);
   font-size: 18px;
   font-weight: 700;
   padding-left: 28px;
@@ -1724,8 +1733,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-pricing-inner-item:hover:before {
   top: -10px;
@@ -1745,7 +1754,7 @@ select:visited {
 .xis-it-portfolio-section {
   z-index: 1;
   overflow: hidden;
-  background-color: #f8f6f4;
+  background-color: var(--bg-light);
 }
 .xis-it-portfolio-section .xis-it-side-shape {
   top: 26.5%;
@@ -1771,7 +1780,7 @@ select:visited {
 .xis-it-portfolio-filter-btn button {
   padding: 0;
   border: none;
-  color: #071157;
+  color: var(--primary);
   font-size: 18px;
   font-weight: 600;
   margin: 0px 12px;
@@ -1791,8 +1800,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-portfolio-filter-btn button.is-checked:before {
   width: 100%;
@@ -1885,7 +1894,7 @@ select:visited {
 /*----------------------------------------------------*/
 .xis-it-counter-section {
   padding: 110px 0px 90px;
-  background-color: #f8f6f4;
+  background-color: var(--bg-light);
 }
 
 .xis-it-counter-item .inner-icon {
@@ -1905,7 +1914,7 @@ select:visited {
   background-color: #fff;
 }
 .xis-it-counter-item .inner-text h3 {
-  color: #071157;
+  color: var(--primary);
   font-size: 60px;
   font-weight: 700;
   line-height: 0.75;
@@ -2105,8 +2114,8 @@ select:visited {
   position: absolute;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background-image: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background-image: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-instagram-img-wrap .xis-it-instagram-img a:before {
   left: 0;
@@ -2221,7 +2230,7 @@ select:visited {
   padding: 60px 65px;
   background-color: #fff;
   border-top-left-radius: 70px;
-  border-right: 5px solid #fa01f5;
+  border-right: 5px solid #0B3C5D;
   -webkit-box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
           box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
 }
@@ -2288,8 +2297,8 @@ select:visited {
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
   background-size: 200%, 1px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#08cbfb), color-stop(50%, #f606f8), to(#08cbfb));
-  background-image: linear-gradient(90deg, #08cbfb 0%, #f606f8 50%, #08cbfb);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--secondary)), color-stop(50%, var(--primary)), to(var(--secondary)));
+  background-image: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 50%, var(--secondary));
 }
 .xis-it-footer-newslatter-form button:hover {
   background-position: 120%;
@@ -2364,8 +2373,8 @@ select:visited {
   border-radius: 100%;
   -webkit-transition: 500ms all ease;
   transition: 500ms all ease;
-  background: -webkit-gradient(linear, left top, right top, from(#00d1fb), to(#ff00fa));
-  background: linear-gradient(90deg, #00d1fb 0%, #ff00fa 100%);
+  background: -webkit-gradient(linear, left top, right top, from(var(--secondary)), to(var(--primary)));
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
 }
 .xis-it-footer-widget .logo-widget .footer-social li a:hover {
   color: #fff;
@@ -2383,7 +2392,7 @@ select:visited {
   font-weight: 500;
 }
 .xis-it-footer-widget .menu-widget li a:hover {
-  color: #fa04fa;
+  color: white;
 }
 .xis-it-footer-widget .app-btn-widget {
   padding-left: 80px;
@@ -2394,7 +2403,7 @@ select:visited {
 }
 
 .xis-it-footer-copyright {
-  background-color: #172231;
+  background-color: var(--primary);
 }
 
 .xis-it-footer-copyright-content {
@@ -2405,7 +2414,7 @@ select:visited {
   font-family: "Rajdhani";
 }
 .xis-it-footer-copyright-content .xis-it-copyright-text a {
-  color: #fa04fa;
+  color: var(--primary);
 }
 
 .xis-it-footer-widget-wrapper{
@@ -2466,7 +2475,7 @@ transition:0.3s;
 }
 
 .menu-widget li a:hover{
-color:#ff00fa;
+color:var(--primary);
 }
 
 /* contact */
@@ -2513,13 +2522,13 @@ transition:0.4s;
 }
 
 .social-box li a:hover{
-background:linear-gradient(90deg,#00d1fb,#ff00fa);
+background:linear-gradient(90deg,var(--secondary),var(--primary));
 color:#fff;
 }
 
 /* copyright */
 .xis-it-footer-copyright{
-background:#172231;
+background:var(--primary);
 }
 
 .xis-it-footer-copyright-content{
@@ -2529,7 +2538,7 @@ font-weight:600;
 }
 
 .xis-it-footer-copyright a{
-color:#ff00fa;
+color:var(--primary);
 }
 
 .header-buttons{
@@ -2546,13 +2555,13 @@ border-radius:5px;
 font-family:"Rajdhani";
 font-weight:600;
 color:#fff !important;
-border:2px solid #08cbfb;
+border:2px solid var(--secondary);
 transition:0.4s;
 }
 
 
 .login-btn1:hover{
-background:linear-gradient(90deg,#08cbfb,#f606f8);
+background:linear-gradient(90deg,var(--secondary),var(--primary));
 border:none;
 }
 
@@ -2564,7 +2573,7 @@ border-radius:5px;
 font-family:"Rajdhani";
 font-weight:600;
 color:#fff !important;
-background:linear-gradient(90deg,#08cbfb 0%,#f606f8 50%,#08cbfb);
+background:linear-gradient(90deg,var(--secondary) 0%,var(--primary) 50%,var(--secondary));
 background-size:200%;
 transition:0.4s;
 }
@@ -2776,7 +2785,7 @@ background-position:100%;
   }
 
   .xis-it-sservice-cta-content .xis-it-service-text-wrap .xis-it-section-title span {
-    background-color: #dcf6ff;
+    background-color: var(--bg-light);
   }
 
   .xis-it-sponsor-section {
@@ -3059,7 +3068,7 @@ font-weight:700;
 border-radius:6px;
 color:#fff;
 font-family:'Rajdhani';
-background:linear-gradient(90deg,#00d1fb,#ff00fa);
+background:linear-gradient(90deg,var(--secondary),var(--primary));
 transition:0.3s;
 }
 
@@ -3217,7 +3226,7 @@ right:0;
 top:20px;
 height:200px;
 width:2px;
-background:linear-gradient(180deg,#08cbfb,#f606f8);
+background:linear-gradient(180deg,var(--secondary),var(--primary));
 }
 
 /* Remove divider for last column */
@@ -3232,14 +3241,14 @@ text-align:center;
 margin-top:15px;
 padding:12px;
 color:#fff !important;
-border:2px solid #08cbfb;
+border:2px solid var(--secondary);
 border-radius:5px;
 font-weight:600;
 font-family:"Rajdhani";
 }
 
 .mobile-login-btn a:hover{
-background:linear-gradient(90deg,#08cbfb,#f606f8);
+background:linear-gradient(90deg,var(--secondary),var(--primary));
 }
 
 .mobile-start-btn a{
@@ -3251,7 +3260,7 @@ color:#fff !important;
 border-radius:5px;
 font-weight:600;
 font-family:"Rajdhani";
-background:linear-gradient(90deg,#08cbfb,#f606f8);
+background:linear-gradient(90deg,var(--secondary),var(--primary));
 }
 
 @media (max-width:991px){
@@ -3289,7 +3298,7 @@ color:#fff;
 .bio-logo img{
 width:180px;
 margin-bottom:40px;
-filter:drop-shadow(0 0 10px #00d2ff);
+filter:drop-shadow(0 0 10px #328CC1);
 }
 
 /* MOLECULE */
@@ -3308,10 +3317,11 @@ animation:rotate3d 8s linear infinite;
 position:absolute;
 width:18px;
 height:18px;
-background:#00d2ff;
+background:#328CC1;
 border-radius:50%;
-box-shadow:0 0 10px #00d2ff,0 0 20px #00d2ff;
+box-shadow:0 0 10px #328CC1,0 0 20px #328CC1;
 }
+
 
 /* POSITIONS */
 
@@ -3319,7 +3329,7 @@ box-shadow:0 0 10px #00d2ff,0 0 20px #00d2ff;
 .a2{bottom:0;left:60px;}
 .a3{left:0;top:60px;}
 .a4{right:0;top:60px;}
-.a5{top:60px;left:60px;background:#a100ff;}
+.a5{top:60px;left:60px;background:#0B3C5D;}
 
 /* ORBIT LINES */
 
@@ -3358,7 +3368,7 @@ transform:rotateX(70deg);
 margin-top:30px;
 font-size:18px;
 letter-spacing:2px;
-color:#00d2ff;
+color:#328CC1;
 animation:pulse 2s infinite;
 }
 
@@ -3408,4 +3418,9 @@ animation:pulse 2s infinite;
         height:auto !important;
     }
 
+}
+
+.brand-logo1 img {
+    max-height: 60px;   /* adjust based on header */
+    width: auto;
 }
